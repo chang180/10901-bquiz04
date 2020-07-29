@@ -5,7 +5,7 @@ date_default_timezone_set("Asia/Taipei");
 
 class DB
 {
-    private $dsn = "mysql:host=localhost;charset=utf8;dbname=db01";
+    private $dsn = "mysql:host=localhost;charset=utf8;dbname=db04";
     private $root = "root";
     private $password = "";
     public function __construct($table)
@@ -70,13 +70,13 @@ function to($url)
     header("location:$url");
 }
 
-// $Ad = new DB('ad');
-// $Title = new DB('title');
-// $Bottom = new DB('Bottom');
-// $Mvim = new DB('mvim');
-// $Image = new DB('image');
+$Goods = new DB('goods');
+$Member = new DB('member');
+$Bottom = new DB('bottom');
+$Ord = new DB('ord');
+$Type = new DB('type');
 // $Menu = new DB('menu');
-// $Admin = new DB('admin');
+$Admin = new DB('admin');
 // $Total = new DB('total');
 // $News = new DB('news');
 
