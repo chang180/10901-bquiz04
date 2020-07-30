@@ -3,16 +3,56 @@
 <div class="ct">新增中分類<select name="mid" id="mid"></select><input type="text" name="mid_name" id="mid_name"><button onclick="addMid()">新增</button>
 </div>
 
+<table class="all type-list"></table>
+
 <script>
-function addBig(){
-$.post("api/add_big.php",{'name':$("#big").val(),'parent':0},function(){
-$.get("api/get_big.php",function(options){
-$("#mid").html(options)
-})
-})
-}
+    getTypeList();
+    getBigOption();
 
-function addMid(){
+    function addBig() {
+        $.post("api/save_type.php", {
+            'name': $("#big").val(),
+            'parent': 0
+        }, function() {
+            getBigOption();
+            getTypeList();
 
-}
+        })
+    }
+
+    function addMid() {
+        let name = $("#mid_name").val();
+        let big = $("#mid").val();
+        $.post("api/save_type.php", {
+            'name': name,
+            'parent': big
+        }, function() {
+            getBigOption();
+            getTypeList();
+
+        })
+    }
+
+    function getBigOption() {
+        $.get("api/get_big.php", function(options) {
+            $("#mid").html(options)
+        })
+    }
+
+    function getTypeList() {
+        $.get("api/get_type_list.php", function(list) {
+            $(".type-list").html(list);
+        })
+    }
+
+    function edit(id) {
+        let newName = prompt("請輸入要修改的分類名稱", $("#t" + id).html());
+        if (newName != null) {
+            $("#t" + id).html(newName);
+            $.post("api/edit_type.php", {
+                id,
+                newName
+            })
+        }
+    }
 </script>
