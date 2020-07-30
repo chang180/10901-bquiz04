@@ -17,11 +17,11 @@ $apr=unserialize($row['pr']);
         <tr>
             <td class="tt ct">權限</td>
             <td class="pp">
-                <div><input type="checkbox" name="pr[]" value="1" <?=in_array("1",$apr)?"checked":"";?>>商品分類與管理</div>
-                <div><input type="checkbox" name="pr[]" value="2" <?=in_array("2",$apr)?"checked":"";?>>訂單管理</div>
-                <div><input type="checkbox" name="pr[]" value="3" <?=in_array("3",$apr)?"checked":"";?>>會員管理</div>
-                <div><input type="checkbox" name="pr[]" value="4" <?=in_array("4",$apr)?"checked":"";?>>頁尾版權區管理</div>
-                <div><input type="checkbox" name="pr[]" value="5" <?=in_array("5",$apr)?"checked":"";?>>最新消息管理</div>
+                <div><input type="checkbox" name="pr[]" value="1" <?=@in_array("1",$apr)?"checked":"";?>>商品分類與管理</div>
+                <div><input type="checkbox" name="pr[]" value="2" <?=@in_array("2",$apr)?"checked":"";?>>訂單管理</div>
+                <div><input type="checkbox" name="pr[]" value="3" <?=@in_array("3",$apr)?"checked":"";?>>會員管理</div>
+                <div><input type="checkbox" name="pr[]" value="4" <?=@in_array("4",$apr)?"checked":"";?>>頁尾版權區管理</div>
+                <div><input type="checkbox" name="pr[]" value="5" <?=@in_array("5",$apr)?"checked":"";?>>最新消息管理</div>
             </td>
         </tr>
         <input type="hidden" name="id" value="<?=$row['id'];?>">
