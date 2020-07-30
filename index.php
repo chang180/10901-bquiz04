@@ -13,7 +13,6 @@
 </head>
 
 <body>
-        <iframe name="back" style="display:none;"></iframe>
         <div id="main">
                 <div id="top">
                         <a href="?">
