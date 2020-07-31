@@ -8,6 +8,33 @@
 <h2 class="ct">商品管理</h2>
 <div class="ct"><button onclick="location.href='?do=add_goods'">新增商品</button></div>
 
+<table class="all">
+    <tr class="tt ct">
+        <td>編號</td>
+        <td>商品名稱</td>
+        <td>庫存量</td>
+        <td>狀態</td>
+        <td>操作</td>
+    </tr>
+    <?php
+    $rows = $Goods->all();
+    foreach ($rows as $row) {
+    ?>
+        <tr class="pp">
+            <td class="ct"><?= $row['no']; ?></td>
+            <td class="ct"><?= $row['name']; ?></td>
+            <td class="ct"><?= $row['stock']; ?></td>
+            <td class="ct"><?= ($row['sh'] == 1) ? "販售中" : "下架"; ?></td>
+            <td class="ct">
+                <button>修改</button>
+                <button>刪除</button>
+                <button>上架</button>
+                <button>下架</button>
+            </td>
+        </tr>
+    <?php } ?>
+</table>
+
 
 <script>
     getTypeList();
