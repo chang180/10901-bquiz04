@@ -24,12 +24,12 @@
             <td class="ct"><?= $row['no']; ?></td>
             <td class="ct"><?= $row['name']; ?></td>
             <td class="ct"><?= $row['stock']; ?></td>
-            <td class="ct"><?= ($row['sh'] == 1) ? "販售中" : "下架"; ?></td>
+            <td class="ct" id="g<?=$row['id'];?>"><?= ($row['sh'] == 1) ? "販售中" : "已下架"; ?></td>
             <td class="ct">
-                <button>修改</button>
-                <button>刪除</button>
-                <button>上架</button>
-                <button>下架</button>
+                <button onclick="location.href='?do=edit_goods&id=<?=$row['id'];?>'">修改</button>
+                <button onclick="del('goods',<?=$row['id'];?>)">刪除</button>
+                <button onclick="sh(<?=$row['id'];?>,1)">上架</button>
+                <button onclick="sh(<?=$row['id'];?>,2)">下架</button>
             </td>
         </tr>
     <?php } ?>
@@ -37,6 +37,19 @@
 
 
 <script>
+
+    function sh(id,type){
+        $.post("api/sh.php",{id,type},function(){
+switch(type){
+    case 1:
+        $("#g"+id).html('販售中');
+        break;
+        case 2:
+            $("#g"+id).html('已下架');
+            break;
+}
+        })
+    }
     getTypeList();
     getBigOption();
 
