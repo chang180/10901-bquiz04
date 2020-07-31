@@ -52,15 +52,16 @@
                 </div>
                 <div id="left" class="ct">
                         <div style="min-height:400px;">
+                        <div class="ww"><a href="">全部商品(<?=$Goods->count(['sh'=>1]);?>)</a></div>
                                 <?php
                                 $rows=$Type->all(['parent' => 0]);
                                 foreach ($rows as $row) {
-                                        echo "<div class='ww'><a href=''>" . $row['name'] . "</a>";;
+                                        echo "<div class='ww'><a href=''>" . $row['name'] ."(".$Goods->count(['sh'=>1,'big'=>$row['id']]). ")</a>";;
                                         $mids=$Type->all(['parent' => $row['id']]);
                                         foreach ($mids as $mid) {
                                                 echo "<div class='s'>";
                                                 if (!empty($mids)) {
-                                                        echo "<a href=''>" . $mid['name'] . "</a>";;
+                                                        echo "<a href=''>" . $mid['name'] ."(".$Goods->count(['sh'=>1,'mid'=>$mid['id']]).")</a>";;
                                                 }
                                                 echo "</div>";
                                         }

@@ -110,8 +110,5 @@ div.ww:hover > div.s
 	font-size:12px;
 }
 #left .s a{
-	position: relative;
-	left:100px;
-	top:30px;
 	background:red;
 }
