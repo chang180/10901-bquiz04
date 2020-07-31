@@ -19,7 +19,7 @@ if (empty($type)) {
 foreach ($goods as $g) {
 ?>
     <div style="display:flex;width:80%">
-        <div style="width:40%"><img src="img/<?= $g['img']; ?>" style="width:80%"></div>
+        <div style="width:40%"><a href="?do=detail&id=<?=$g['id'];?>"><img src="img/<?= $g['img']; ?>" style="width:80%"></a></div>
         <div style="width:60%">
             <div><?= $g['name']; ?></div>
             <div>價格：<?= $g['price']; ?>
