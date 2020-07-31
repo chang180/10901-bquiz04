@@ -35,7 +35,7 @@ foreach($_SESSION['cart'] as $id=>$qt){
         <td><?=$qt;?></td>
         <td><?=$goods['stock'];?></td>
         <td><?=$goods['price'];?></td>
-        <td><?=$goods['price'];?></td>
+        <td><?=$goods['price']*$qt;?></td>
         <td>
             <a href="javascript:delCart(<?=$goods['id'];?>)">
                 <img src="img/0415.jpg" alt="">
