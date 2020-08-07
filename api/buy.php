@@ -15,3 +15,6 @@ $data['acc']=$_SESSION['member'];
 $data['goods']=serialize($_SESSION['cart']);
 // print_r($data);
 $Ord->save($data);
+// echo "<script>
+// alert('訂購成功\n感謝您的選購');
+//         location.href='index.php';</script>";
