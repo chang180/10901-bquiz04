@@ -4,8 +4,9 @@
 <?php
 if(!empty($_GET['id'])){
     $_SESSION['cart'][$_GET['id']]=$_GET['qt'];
-}else if(empty($_SESSION['cart'])){
+}else if(!isset($_SESSION['cart']) || empty($_SESSION['cart'])){
     echo "請選擇商品";
+    exit;
 }
 
 if(empty($_SESSION['member'])) to("?do=login");
