@@ -13,19 +13,17 @@
 foreach($ords as $ord){
     ?>
     <tr class="pp">
-        <td><a href="?do=result&id=<?=$ord['id'];?>"><?=$ord['no'];?></a></td>
+        <td><a href="?do=detail&id=<?=$ord['id'];?>"><?=$ord['no'];?></a></td>
         <td><?=$ord['total'];?></td>
         <td><?=$ord['acc'];?></td>
         <td><?=$ord['name'];?></td>
-        <td><?=$ord['date']*$qt;?></td>
+        <td><?=$ord['ord_tim'];?></td>
         <td>
+            <button onclick="del('ord',<?=$ord['id'];?>)">刪除</button>
             </td>
     </tr>
-<?php 
-$sum+=($g['price']*$qt);
-} ?>
-    <tr class="tt">
-        <td class="ct" colspan="5">總價：<?=$sum;?></td>
-    </tr>
+    <?php
+}
+    ?>
 </table>
-<button onclick="buy()">確定送出</button><button onclick="location.href='?do=buycart'">返回修改</button>
+<div class="ct"><button onclick="location.href='index.php'">返回</button></div>
