@@ -44,10 +44,13 @@ foreach($_SESSION['cart'] as $id=>$qt){
     </tr>
 <?php } ?>
 </table>
+<div class="ct">
+<a href="index.php"><img src="img/0411.jpg" alt=""></a><a href="?do=check"><img src="img/0412.jpg" alt=""></a>
+</div>
 <script>
     function delCart(id){
         $.post("api/del_cart.php",{id},function(){
-            location.reload();
+            location.href="?do=buycart";
         })
     }
 </script>
