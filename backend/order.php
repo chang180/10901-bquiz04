@@ -17,7 +17,7 @@ foreach($ords as $ord){
         <td><?=$ord['total'];?></td>
         <td><?=$ord['acc'];?></td>
         <td><?=$ord['name'];?></td>
-        <td><?=$ord['ord_tim'];?></td>
+        <td><?=$ord['ord_time'];?></td>
         <td>
             <button onclick="del('ord',<?=$ord['id'];?>)">刪除</button>
             </td>
